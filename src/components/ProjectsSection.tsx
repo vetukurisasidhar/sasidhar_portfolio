@@ -17,17 +17,18 @@ const projects = [
     github: "https://github.com/vetukurisasidhar",
   },
   {
-    title: "Online Learning Platform",
-    desc: "An online platform for browsing courses, enrolling in programs, and tracking learning progress with student and instructor interfaces.",
-    tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+    title: "BookStore (MERN App)",
+    desc: "A complete full-stack e-commerce bookstore featuring secure JWT authentication and role-based access control for Users, Sellers, and Admins.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
     features: [
-      "Course browsing system",
-      "Video lecture pages",
-      "Course modules and lessons",
-      "REST APIs for management",
-      "Responsive design",
+      "Secure signup/login with JWT",
+      "Role-based access (User/Seller/Admin)",
+      "Book uploads & catalog management",
+      "Shopping cart & order placement",
+      "Responsive dashboards",
     ],
-    github: "https://github.com/vetukurisasidhar",
+    github: "https://github.com/vetukurisasidhar/Book_Store",
+    live: "https://book-store-jade-six-31.vercel.app",
   },
 ];
 
@@ -64,14 +65,28 @@ const ProjectsSection = () => {
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{p.title}</h3>
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <Github size={20} />
-                  </a>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                      title="View GitHub Repository"
+                    >
+                      <Github size={20} />
+                    </a>
+                    {p.live && (
+                      <a
+                        href={p.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        title="View Live Site"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
+                  </div>
                 </div>
                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{p.desc}</p>
 
